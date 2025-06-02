@@ -1,0 +1,40 @@
+DECLARE bin : string
+DECLARE i : integer
+DECLARE valor : integer
+DECLARE potencia : integer
+PUSH "Introduza uma string binária:"
+PRINT
+READ bin
+PUSH 0
+STORE valor
+PUSH 1
+STORE potencia
+LENGTH bin
+STORE i
+for_1:
+LOAD i
+PUSH 1
+LT
+JZ endfor_1
+LOAD bin[i]
+PUSH "1"
+EQ
+JZ endif_1
+LOAD valor
+LOAD potencia
+ADD
+STORE valor
+endif_1:
+LOAD potencia
+PUSH 2
+MUL
+STORE potencia
+LOAD i
+PUSH 1
+SUB
+STORE i
+JMP for_1
+endfor_1:
+PUSH "O valor inteiro correspondente é: "
+LOAD valor
+PRINT

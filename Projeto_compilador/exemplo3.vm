@@ -1,0 +1,27 @@
+PUSH "Introduza um número inteiro positivo:"
+PRINT
+READ n
+PUSH 1
+STORE fat
+PUSH 1
+STORE i
+for_1:
+LOAD i
+LOAD n
+GT
+JZ endfor_1
+LOAD fat
+LOAD i
+MUL
+STORE fat
+LOAD i
+PUSH 1
+ADD
+STORE i
+JMP for_1
+endfor_1:
+PUSH "Fatorial de "
+LOAD n
+PUSH ": "
+LOAD fat
+PRINT

@@ -1,0 +1,45 @@
+DECLARE num : integer
+DECLARE i : integer
+DECLARE primo : boolean
+PUSH "Introduza um número inteiro positivo:"
+PRINT
+READ num
+PUSH 1
+STORE primo
+PUSH 2
+STORE i
+while_1:
+LOAD i
+LOAD num
+PUSH 2
+DIV
+LE
+LOAD primo
+AND
+JZ endw_1
+LOAD num
+LOAD i
+MOD
+PUSH 0
+EQ
+JZ endif_1
+PUSH 0
+STORE primo
+endif_1:
+LOAD i
+PUSH 1
+ADD
+STORE i
+JMP while_1
+endw_1:
+LOAD primo
+JZ else_1
+LOAD num
+PUSH " é um número primo"
+PRINT
+JMP endif_2
+else_1:
+LOAD num
+PUSH " não é um número primo"
+PRINT
+endif_2:

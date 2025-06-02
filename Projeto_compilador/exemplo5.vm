@@ -1,0 +1,25 @@
+PUSH 0
+STORE soma
+PUSH "Introduza 5 números inteiros:"
+PRINT
+PUSH 1
+STORE i
+for_1:
+LOAD i
+PUSH 5
+GT
+JZ endfor_1
+READ numeros[i]
+LOAD soma
+LOAD numeros[i]
+ADD
+STORE soma
+LOAD i
+PUSH 1
+ADD
+STORE i
+JMP for_1
+endfor_1:
+PUSH "A soma dos números é: "
+LOAD soma
+PRINT
