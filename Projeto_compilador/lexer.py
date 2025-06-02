@@ -1,4 +1,4 @@
-# lexer.py
+
 import ply.lex as lex
 
 # Lista de tokens
@@ -44,7 +44,7 @@ reserved = {
 
 tokens += list(reserved.values())
 
-# Regras simples
+# Expressões regulares para os tokens   
 t_PLUS = r'\+'
 t_MINUS = r'-'
 t_TIMES = r'\*'
